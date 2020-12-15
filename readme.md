@@ -30,7 +30,7 @@ To test the model, use:
 
 Note: a speeds file is optional for testing, if ground truths are given for a test video error will be displayed. The model will not be trained during testing.
 
-![Flow](flow_img.png)
+![Flow](demo/speednet-demo.gif)
 
 ## Tensorboard
 If training new models, to use tensorboard to log training/validation loss and accuracy, use:
