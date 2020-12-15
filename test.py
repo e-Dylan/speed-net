@@ -63,7 +63,7 @@ def opticalflow(img1, img2): # DOF
 	return rgb
 
 def test_model(model_file, video_file, gt_file=None):
-	model = torch.load(MODEL_PATH+model_file, map_location=torch.device('cpu'))
+	model = torch.load(MODEL_PATH+model_file)
 
 	cap = cv2.VideoCapture(video_file)
 
@@ -75,6 +75,7 @@ def test_model(model_file, video_file, gt_file=None):
 	speeds = []
 	# get ground truthing data if known
 	if gt_file is not None:
+		print(gt_file)
 		groundtruth_file = open(gt_file, "r")
 		for line in groundtruth_file:
 			speed = float(line.split('\n')[0])
@@ -110,7 +111,7 @@ def test_model(model_file, video_file, gt_file=None):
 					speed = pred.item()
 					
 					preds.append(speed);
-
+					# stack two numpy arrays of images.
 					test_frame = np.hstack((frame, flow_img_bgr))
 					cv2.putText(test_frame, f"Predicted Speed: { round(speed, 2) }", (5,35), FONT, 0.55, (20, 255, 20), 2)
 					cv2.putText(test_frame, f"Exit: q", (5,470), FONT, 0.55, (255, 255, 255), 1)

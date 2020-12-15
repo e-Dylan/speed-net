@@ -375,6 +375,9 @@ if __name__ == "__main__":
 	net = net.double()
 
 	net.main(args)
+	print("done")
+
+	# test_model("MODEL-(=55e)-DOF-[full-highway+city]-1601720148.4695241.pth", "test.mp4", "test.txt");
 
 
 
