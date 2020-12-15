@@ -26,7 +26,7 @@ Training time will depend on if you are running a CUDA enabled gpu.
 The model is located in "./models/MODEL-(=55e)-DOF-[full-highway+city]-1601720148.4695241.pth".
 To test the model, use:
 
-`python SNet.py --mode=test --model_file=model_file_name.pth --video_file=test.mp4 --speed_file=test.txt`
+`python SNet.py --mode=test --model_file=file.pth --video_file=data/test.mp4 --speed_file=data/test.txt`
 
 Note: a speeds file is optional for testing, if ground truths are given for a test video error will be displayed. The model will not be trained during testing.
 
